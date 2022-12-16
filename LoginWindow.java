@@ -1,12 +1,18 @@
 /*
+ /*
  * Stage: Development-01
  * @author: Ahmet Berkay Seyhun
- * @author: Elif Kýrýkkaya
+ * @author: Elif Kï¿½rï¿½kkaya
  *
  */
 
-import java.awt.GridLayout;
-import java.awt.Insets;
+//Dev 02
+//@author:Ahmed Ibrahim Attya Hamouda,120200006
+//@author: Melike Zeynep TapcÄ± 120200067
+//Dev02:line25-36
+//Dev02:line98-120
+
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,7 +23,19 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-
+//Dev02:
+class Library  extends JFrame
+{
+	//constructor
+	Library()
+	{
+		setDefaultCloseOperation(javax.swing.
+				WindowConstants.DISPOSE_ON_CLOSE);
+		setTitle("Welcome");
+		setSize(400, 200);
+	}
+}
+//End of Dev02
 public class LoginWindow extends JFrame implements ActionListener {
 
 	// main method for testing the application
@@ -34,7 +52,7 @@ public class LoginWindow extends JFrame implements ActionListener {
 	 * ! YOU CAN ADD MORE ELEMENTS IF IT IS NECESSARY !
 	 */
 
-	
+
 	private JButton btn01, btn02;
 	private JLabel lbl01, lbl02, lbl03;
 	private JTextField txt01, txt02, txt03;
@@ -49,7 +67,6 @@ public class LoginWindow extends JFrame implements ActionListener {
 
 	}
 
-
 	/**
 	 * Initialize GUI elements. If it is necessary, you can add more
 	 * 	elements.
@@ -58,22 +75,47 @@ public class LoginWindow extends JFrame implements ActionListener {
 		lbl01 = new JLabel("Username", SwingConstants.CENTER);
 		lbl02 = new JLabel("Password", SwingConstants.CENTER);
 		lbl03 = new JLabel("Requested Book", SwingConstants.CENTER);
-		
 
-		txt01 = new JTextField("*Please Write Your Username*");
-		txt02 = new JTextField("*Please Write Your Password*");
-		txt03 = new JTextField("*Please Write the Book You Want*");
 
-		
+		txt01 = new JTextField("Please Write Your Username");
+		txt02 = new JTextField("Please Write Your Password");
+		txt03 = new JTextField("Please Write the Book You Want");
+
+
 		txt01.setHorizontalAlignment(SwingConstants.CENTER);
 		txt02.setHorizontalAlignment(SwingConstants.CENTER);
 		txt03.setHorizontalAlignment(SwingConstants.CENTER);
 
 		btn01 = new JButton("Library");
 		btn02 = new JButton("Borrow the Book");
+		//Dev 02 commented it Because it doesn't work
+//        btn01.addActionListener(this);
+//        btn02.addActionListener(this);
+//         End of comment of Dev02
 
-		btn01.addActionListener(this);
-		btn02.addActionListener(this);
+//Dev02:
+		btn01.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame secondWindow=new JFrame();
+				secondWindow.setSize(500,500);
+				secondWindow.setVisible(true);
+
+				JLabel bookLbl=new JLabel("Please write the name of the book you wanna book");
+				bookLbl.setBounds(50,50,400,100);
+				JTextField bookTxt =new JTextField();
+				JButton okBtn= new JButton();
+				okBtn.setBounds(100,300,50,50);
+
+				String bookName =bookTxt.getText();
+				JTextField result =new JTextField();
+				secondWindow.add(bookLbl);
+				secondWindow.add(result);
+				secondWindow.add(bookTxt);
+				secondWindow.add(okBtn);
+
+			}
+		});
+		//End of dev2
 	}
 
 
@@ -102,7 +144,7 @@ public class LoginWindow extends JFrame implements ActionListener {
 
 		this.add(lbl02);
 		this.add(txt02);
-		
+
 		this.add(lbl03);
 		this.add(txt03);
 
@@ -115,9 +157,9 @@ public class LoginWindow extends JFrame implements ActionListener {
 	 * Add margin to the frame.
 	 */
 	@Override
-    public Insets getInsets() {
-        return new Insets(100, 50, 100, 50);
-    }
+	public Insets getInsets() {
+		return new Insets(100, 50, 100, 50);
+	}
 
 
 	/**
@@ -129,21 +171,22 @@ public class LoginWindow extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-	/*	
-		// demo username and passwords
-		String  username = "bilgi";
-		String password = "20222023";
-		
-		if(txt01.equals("username" && txt02.equals("20222023"))) {
-			
-			Library lframe = new Library();
-			lframe.setVisible(true);
-		
-		}
 
-		else {
-			JOptionPane.showMessageDialog(btn01, "Invalid Username or Password");
-		}
-		*/
+		// demo username and passwords
+//		String  username = "bilgi";
+//		String password = "20222023";
+//
+//		if(txt01.equals("username" && txt02.equals("20222023"))) {
+//
+//			Library lframe = new Library();
+//			lframe.setVisible(true);
+//
+//		}
+//
+//		else {
+//			JOptionPane.showMessageDialog(btn01, "Invalid Username or Password");
+//		}
+//
+
 	}
 }
